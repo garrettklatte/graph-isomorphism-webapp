@@ -1,24 +1,61 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Graph} from './Graph';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    const nodes = [
+      {'val': 'A',
+       'adjacents': ['B', 'C']
+      },
+      {'val': 'B',
+       'adjacents': []
+      },
+      {'val': 'C',
+       'adjacents': ['D']
+      },
+      {'val': 'D',
+       'adjacents': []
+      },
+      {'val': 'E',
+       'adjacents': ['A', 'B']
+      },
+
+    ];
+
+    const edges = [
+      {'start': 'A',
+       'end': 'B'},
+      {'start': 'A',
+       'end': 'C'},
+      {'start': 'C',
+       'end': 'D'},
+      {'start': 'E',
+       'end': 'A'},
+      {'start': 'E',
+       'end': 'B'}
+    ];
+
+    this.state = {
+      nodes: nodes.map(node => (
+         {
+           val: node.val,
+           x: Math.random() * 1000,
+           y: Math.random() * 500,
+         })),
+      edges,
+      radius: 10,
+    };
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <Graph nodes={this.state.nodes} edges={this.state.edges}/>
+          <Graph nodes={this.state.nodes} edges={this.state.edges}/>
         </header>
       </div>
     );
