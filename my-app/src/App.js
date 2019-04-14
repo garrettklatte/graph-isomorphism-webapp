@@ -51,11 +51,14 @@ class App extends Component {
   }
 
   render() {
+    const {nodes, edges} = this.state;
     return (
       <div className="App">
         <header className="App-header">
-          <Graph nodes={this.state.nodes} edges={this.state.edges}/>
-          <Graph nodes={this.state.nodes} edges={this.state.edges}/>
+          <div>
+            <Graph nodes={nodes} edges={edges}/>
+            <Graph nodes={nodes} edges={edges}/>
+          </div>
         </header>
       </div>
     );
