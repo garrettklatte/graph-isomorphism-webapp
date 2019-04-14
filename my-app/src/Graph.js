@@ -40,14 +40,6 @@ export class Graph extends Component {
     const {edges, nodes, radius} = this.state;
     return (
       <svg width={WIDTH} height={HEIGHT}>
-        {nodes.map(node => (
-          <Draggable defaultPosition={{x: node.x, y: node.y}}
-                     onDrag={this.onDragHandler(node.val)}
-                     onStop={this.onDragHandler(node.val)}
-                     key={node.val}>
-            <circle r={radius} style={{stroke: "white", fill: "white"}}/>
-          </Draggable>
-        ))}
         {edges.map(edge => {
           const {start, end} = edge;
           const startNode = nodes.find(node => node.val === start);
@@ -64,8 +56,15 @@ export class Graph extends Component {
             />
           );
         })}
+        {nodes.map(node => (
+          <Draggable defaultPosition={{x: node.x, y: node.y}}
+                     onDrag={this.onDragHandler(node.val)}
+                     onStop={this.onDragHandler(node.val)}
+                     key={node.val}>
+            <circle r={radius} style={{stroke: "white", fill: "white"}}/>
+          </Draggable>
+        ))}
       </svg>
     );
   }
 }
-
