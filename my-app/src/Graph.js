@@ -29,8 +29,8 @@ export class Graph extends Component {
           return node;
         return {
           ...node,
-          x: x - radius/2,
-          y: y - radius/2,
+          x,
+          y,
         };
       })
     });
