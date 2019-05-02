@@ -31,3 +31,14 @@
     transform: rotate(360deg);
   }
 }
+
+.Graph-Body {
+    display: grid;
+    grid-template-columns: 300px 300px;
+    grid-template-rows: 500px;
+    grid-gap: 1em;
+}
+
+.Graph-Body > * {
+    background-color: pink;
+}
