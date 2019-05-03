@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import SourceGraph from '../containers/SourceGraph';
 import TargetGraph from '../containers/TargetGraph';
 
 const App = () => (
@@ -7,7 +8,7 @@ const App = () => (
     <header className="App-header">
       <div className="Graph-Body">
         <TargetGraph />
-        <TargetGraph />
+        <SourceGraph />
       </div>
     </header>
   </div>
