@@ -1,12 +1,12 @@
 import React from 'react';
 import Draggable from 'react-draggable';
 
-const Graph = ({vertices, edges, radius, onDrag, onStop}) => (
+const Graph = ({vertices, verticesById, edges, radius, onDrag, onStop}) => (
   <svg viewBox="0 0 100 100">
     {edges.map(edge => {
       const {start, end} = edge;
-      const startVertex = vertices[start];
-      const endVertex = vertices[end];
+      const startVertex = verticesById[start];
+      const endVertex = verticesById[end];
       const key = start + end;
       return (
         <line x1={startVertex.x}
@@ -20,12 +20,12 @@ const Graph = ({vertices, edges, radius, onDrag, onStop}) => (
       );
     })}
     {vertices.map(vertex => (
-      <Draggable onDrag={onDrag([vertex])}
+      <Draggable onDrag={onDrag(vertex)}
                  onStop={onStop()}
-                 key={[vertex]}
+                 key={vertex}
                  scale={3}>
-        <circle cx={vertex.x}
-                cy={vertex.y}
+        <circle cx={verticesById[vertex].x}
+                cy={verticesById[vertex].y}
                 r={radius}
                 style={{stroke: "white", fill: "white"}}/>
       </Draggable>

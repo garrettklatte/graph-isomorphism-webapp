@@ -10,8 +10,9 @@ const onStop = () => {}
 
 const mapStateToProps = state => {
   return {
-    vertices: state.target.vertices,
-    edges: state.target.edges,
+    vertices: state.vertices,
+    verticesById: state.target,
+    edges: state.edges,
     radius: 10,
   }
 }
