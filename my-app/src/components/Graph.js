@@ -22,11 +22,11 @@ const Graph = ({vertices, verticesById, edges, radius, onDrag, onStop}) => (
     {vertices.map(vertex => (
       <Draggable onDrag={onDrag(vertex)}
                  onStop={onStop()}
+                 defaultPosition={{x: verticesById[vertex].x,
+                                   y: verticesById[vertex].y}}
                  key={vertex}
                  scale={3}>
-        <circle cx={verticesById[vertex].x}
-                cy={verticesById[vertex].y}
-                r={radius}
+        <circle r={radius}
                 style={{stroke: "white", fill: "white"}}/>
       </Draggable>
     ))}
