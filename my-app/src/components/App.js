@@ -7,7 +7,7 @@ const App = () => (
   <div className="App">
     <nav>
       <ul className="Nav">
-        <li><p>Graph Isomorphism</p></li>
+        <li className="Nav-Left"><p>Graph Isomorphism</p></li>
         <li><p>Easy</p></li>
         <li><p>Medium</p></li>
         <li><p>Hard</p></li>

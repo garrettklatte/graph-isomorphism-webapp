@@ -3,6 +3,33 @@
     margin: 0 auto;
 }
 
+.Nav {
+    display: flex;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.Nav > li {
+    margin-top: 0;
+}
+
+.Nav > li > p {
+    display: block;
+    padding: 0.5em 1em;
+    background-color: orange;
+    color: white;
+    border-radius: 2px;
+    text-decoration: none;
+}
+
+.Nav > li + li {
+    margin-left: 1.5em;
+}
+
+.Nav > .Nav-Left {
+    margin-right: auto;
+}
+
 .Graph-Body {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -13,22 +40,6 @@
 .Graph-Body > svg {
     background-color: pink;
     border-radius: 5px;
-}
-
-.Nav {
-    list-style: none;
-}
-
-.Nav li {
-    display: inline-block;
-}
-
-.Nav p {
-    color: white;
-    background-color: orange;
-    padding: 5px;
-    border-radius: 2px;
-    text-decoration: none;
 }
 
 .Title {
