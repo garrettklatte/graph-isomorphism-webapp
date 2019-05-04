@@ -1,14 +1,36 @@
 .App {
-  text-align: center;
+    background-color: #282c34;
+    margin: 0;
+}
+
+.Container {
+    max-width: 1080px;
+    margin: 0 auto;
 }
 
 .Graph-Body {
     display: grid;
-    grid-template-columns: 300px 300px;
-    grid-template-rows: 500px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
     grid-gap: 1em;
 }
 
-.Graph-Body > * {
+.Graph-Body > svg {
     background-color: pink;
+}
+
+.Nav {
+    list-style: none;
+}
+
+.Nav li {
+    display: inline-block;
+}
+
+.Nav p {
+    color: white;
+    background-color: orange;
+    padding: 5px;
+    border-radius: 2px;
+    text-decoration: none;
 }
