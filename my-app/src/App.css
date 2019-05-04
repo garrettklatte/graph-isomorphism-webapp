@@ -1,9 +1,4 @@
 .App {
-    background-color: #282c34;
-    margin: 0;
-}
-
-.Container {
     max-width: 1080px;
     margin: 0 auto;
 }
@@ -33,4 +28,12 @@
     padding: 5px;
     border-radius: 2px;
     text-decoration: none;
+}
+
+.Title {
+    color: white;
+    background-color: orange;
+    padding: 10px 20px;
+    margin: 0 auto;
+    border-radius: 5px;
 }
