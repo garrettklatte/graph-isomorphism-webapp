@@ -10,7 +10,7 @@ class Graph extends React.Component {
     this.svgRef = React.createRef();
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     if (this.svgRef === null) {
       return;
     }
@@ -18,9 +18,10 @@ class Graph extends React.Component {
     const {clientWidth} = this.svgRef.current;
     const scale = clientWidth/100;
     onMount(scale);
+    window.addEventListener("resize", this.componentDidMount);
   }
 
-  render() {
+  render = () => {
     const {vertices, verticesById, edges, radius, scale, onDrag, onStop} = this.props;
     return (
       <svg ref={this.svgRef} viewBox="0 0 100 100">
