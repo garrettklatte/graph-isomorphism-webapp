@@ -18,12 +18,14 @@ const mapStateToProps = state => {
     verticesById: state.source,
     edges: state.edges,
     radius: 2.5,
+    scale: state.scale,
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     onDrag: onDrag(dispatch),
+    onMount: onMount(dispatch),
     onStop
   }
 }
