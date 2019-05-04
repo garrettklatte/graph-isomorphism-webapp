@@ -1,0 +1,9 @@
+.Circle {
+    stroke: white;
+    fill: white;
+}
+
+.Line {
+    stroke: white;
+    stroke-width: 0.5
+}

@@ -1,6 +1,8 @@
 import React from 'react';
 import Draggable from 'react-draggable';
 
+import '../styles/Graph.css';
+
 const Graph = ({vertices, verticesById, edges, radius, onDrag, onStop}) => (
   <svg viewBox="0 0 100 100">
     {edges.map(edge => {
@@ -13,8 +15,7 @@ const Graph = ({vertices, verticesById, edges, radius, onDrag, onStop}) => (
               y1={startVertex.y}
               x2={endVertex.x}
               y2={endVertex.y}
-              style={{stroke: "white",
-                      strokeWidth: 0.5}}
+              className="Line"
               key={key}
         />
       );
@@ -27,7 +28,7 @@ const Graph = ({vertices, verticesById, edges, radius, onDrag, onStop}) => (
                  key={vertex}
                  scale={3}>
         <circle r={radius}
-                style={{stroke: "white", fill: "white"}}/>
+                className="Circle"/>
       </Draggable>
     ))}
   </svg>

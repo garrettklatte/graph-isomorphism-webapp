@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../styles/Graph.css';
+
 const StaticGraph = ({vertices, verticesById, edges, radius}) => (
   <svg viewBox="0 0 100 100">
     {edges.map(edge => {
@@ -12,8 +14,7 @@ const StaticGraph = ({vertices, verticesById, edges, radius}) => (
               y1={startVertex.y}
               x2={endVertex.x}
               y2={endVertex.y}
-              style={{stroke: "white",
-                      strokeWidth: 0.5}}
+              className="Line"
               key={key}
         />
       );
@@ -23,7 +24,7 @@ const StaticGraph = ({vertices, verticesById, edges, radius}) => (
               cy={verticesById[vertex].y}
               r={radius}
               key={vertex}
-              style={{stroke: "white", fill: "white"}}
+              className="Circle"
       />
     ))}
   </svg>
