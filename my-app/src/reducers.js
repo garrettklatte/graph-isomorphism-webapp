@@ -1,4 +1,4 @@
-import { SET_POSITION } from './actions'
+import { SET_POSITION, SET_SCALE } from './actions'
 import { combineReducers } from 'redux'
 
 const initialState = {
@@ -88,11 +88,21 @@ const edges = (state = initialState.edges, action) => {
   return state
 }
 
+const scale = (state = 1, action) => {
+  switch (action.type) {
+  case SET_SCALE:
+    return action.scale
+  default:
+    return state
+  }
+}
+
 const graphIsomorphism = combineReducers({
   vertices,
   source,
   target,
-  edges
+  edges,
+  scale
 })
 
 export default graphIsomorphism

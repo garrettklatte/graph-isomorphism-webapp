@@ -1,9 +1,13 @@
 import { connect } from 'react-redux'
 import Graph from '../components/Graph'
-import { setPosition } from '../actions'
+import { setPosition, setScale } from '../actions'
 
 const onDrag = dispatch => vertex => (event, data) => {
   dispatch(setPosition(vertex, data.x, data.y))
+}
+
+const onMount = dispatch => scale => {
+  dispatch(setScale(scale));
 }
 
 const onStop = () => {}
