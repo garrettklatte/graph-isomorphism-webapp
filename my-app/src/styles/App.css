@@ -12,6 +12,7 @@
 
 .Graph-Body > svg {
     background-color: pink;
+    border-radius: 5px;
 }
 
 .Nav {
