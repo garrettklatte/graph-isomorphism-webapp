@@ -5,12 +5,10 @@ import TargetGraph from '../containers/TargetGraph';
 
 const App = () => (
   <div className="App">
-    <header className="App-header">
-      <div className="Graph-Body">
-        <TargetGraph />
-        <SourceGraph />
-      </div>
-    </header>
+    <div className="Graph-Body">
+      <TargetGraph />
+      <SourceGraph />
+    </div>
   </div>
 );
 
