@@ -1,70 +1,19 @@
-import { SET_POSITION, SET_SCALE } from './actions'
+import { SET_GRAPH, SET_POSITION, SET_SCALE } from './actions'
 import { combineReducers } from 'redux'
 
-const initialState = {
-  vertices: ['A', 'B', 'C', 'D'],
-  source: {
-    A: {
-      x: 10,
-      y: 10,
-    },
-    B: {
-      x: 10,
-      y: 90,
-    },
-    C: {
-      x: 90,
-      y: 10,
-    },
-    D: {
-      x: 90,
-      y: 90,
-    }
-  },
-  target: {
-    A: {
-      x: 10,
-      y: 10,
-    },
-    B: {
-      x: 90,
-      y: 10,
-    },
-    C: {
-      x: 90,
-      y: 90,
-    },
-    D: {
-      x: 10,
-      y: 90,
-    }
-  },
-  edges: [
-    {
-      start: 'A',
-      end: 'B',
-    },
-    {
-      start: 'B',
-      end: 'C',
-    },
-    {
-      start: 'C',
-      end: 'D',
-    },
-    {
-      start: 'D',
-      end: 'A',
-    }
-  ]
-}
-
-const vertices = (state = initialState.vertices, action) => {
-  return state
-}
-
-const source = (state = initialState.source, action) => {
+const vertices = (state = [], action) => {
   switch (action.type) {
+  case SET_GRAPH:
+    return action.vertices
+  default:
+    return state
+  }
+}
+
+const source = (state = {}, action) => {
+  switch (action.type) {
+  case SET_GRAPH:
+    return action.source
   case SET_POSITION: {
     const { vertex, x, y } = action
     return {
@@ -80,12 +29,22 @@ const source = (state = initialState.source, action) => {
   }
 }
 
-const target = (state = initialState.target, action) => {
-  return state
+const target = (state = {}, action) => {
+  switch (action.type) {
+  case SET_GRAPH:
+    return action.target
+  default:
+    return state
+  }
 }
 
-const edges = (state = initialState.edges, action) => {
-  return state
+const edges = (state = [], action) => {
+  switch (action.type) {
+  case SET_GRAPH:
+    return action.edges
+  default:
+    return state
+  }
 }
 
 const scale = (state = 1, action) => {
