@@ -20,10 +20,12 @@ export const setScale = scale => (
   }
 )
 
-export const setGraph = (nodes, edges) => (
+export const setGraph = (vertices, source, target, edges) => (
   {
     type: SET_GRAPH,
-    nodes,
+    vertices,
+    source,
+    target,
     edges
   }
 )
