@@ -1,18 +1,13 @@
 import React from 'react';
+
 import '../styles/App.css';
 import SourceGraph from '../containers/SourceGraph';
 import TargetGraph from '../containers/TargetGraph';
+import DifficultyPanel from '../containers/DifficultyPanel';
 
 const App = () => (
   <div className="App">
-    <nav>
-      <ul className="Nav">
-        <li className="Nav-Left"><p>Graph Isomorphism</p></li>
-        <li><p>Easy</p></li>
-        <li><p>Medium</p></li>
-        <li><p>Hard</p></li>
-      </ul>
-    </nav>
+    <DifficultyPanel />
     <div className="Graph-Body">
       <TargetGraph />
       <SourceGraph />

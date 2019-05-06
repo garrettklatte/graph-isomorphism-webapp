@@ -1,4 +1,5 @@
 import { connect } from 'react-redux'
+
 import Graph from '../components/Graph'
 import { setPosition, setScale } from '../actions'
 
