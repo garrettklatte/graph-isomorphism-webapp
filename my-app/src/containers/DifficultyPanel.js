@@ -4,7 +4,10 @@ import Navigation from '../components/Navigation'
 import {fetchEasyGraph, fetchMediumGraph, fetchHardGraph} from '../services'
 
 const mapStateToProps = state => {
-  return {}
+  const {difficulty} = state
+  return {
+    difficulty
+  }
 }
 
 const mapDispatchToProps = dispatch => {

@@ -1,5 +1,7 @@
-import { SET_GRAPH, SET_POSITION, SET_SCALE } from './actions'
 import { combineReducers } from 'redux'
+
+import { EASY, SET_GRAPH, SET_POSITION, SET_SCALE } from './actions'
+
 
 const vertices = (state = [], action) => {
   switch (action.type) {
@@ -56,12 +58,22 @@ const scale = (state = 1, action) => {
   }
 }
 
+const difficulty = (state = EASY, action) => {
+  switch (action.type) {
+  case SET_GRAPH:
+    return action.difficulty
+  default:
+    return state
+  }
+}
+
 const graphIsomorphism = combineReducers({
   vertices,
   source,
   target,
   edges,
-  scale
+  scale,
+  difficulty
 })
 
 export default graphIsomorphism

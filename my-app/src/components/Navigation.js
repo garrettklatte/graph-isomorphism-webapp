@@ -1,15 +1,54 @@
 import React from 'react';
+import styled from 'styled-components';
 
-import '../styles/Navigation.css';
+import {EASY, MEDIUM, HARD} from '../actions';
 
-const Navigation = ({onEasy, onMedium, onHard}) => (
+const Items = styled.ul`
+    display: flex;
+    padding-left: 0;
+    list-style-type: none;
+`;
+
+const Name = styled.p`
+    display: block;
+    padding: 0.5em 1em;
+    background-color: ${props => props.chosen ? "LightBlue": "Orange"};
+    color: white;
+    border-radius: 2px;
+    text-decoration: none;
+
+    :hover {
+        cursor: default;
+    }
+`;
+
+const DifficultyName = styled(Name)`
+    :hover {
+      background-color: red;
+      cursor: pointer;
+    }
+`;
+
+const ListItem = styled.li`
+    margin-top: 0;
+`;
+
+const Title = styled(ListItem)`
+    margin-right: auto;
+`;
+
+const Button = styled(ListItem)`
+    margin-left: 1.5em;
+`;
+
+const Navigation = ({difficulty, onEasy, onMedium, onHard}) => (
   <nav>
-    <ul className="Nav">
-      <li className="Nav-Left"><p>Graph Isomorphism</p></li>
-      <li onClick={onEasy}><p>Easy</p></li>
-      <li onClick={onMedium}><p>Medium</p></li>
-      <li onClick={onHard}><p>Hard</p></li>
-    </ul>
+    <Items>
+      <Title><Name>Graph Isomorphism</Name></Title>
+      <Button onClick={onEasy}><DifficultyName chosen={difficulty === EASY}>Easy</DifficultyName></Button>
+      <Button onClick={onMedium}><DifficultyName chosen={difficulty === MEDIUM}>Medium</DifficultyName></Button>
+      <Button onClick={onHard}><DifficultyName chosen={difficulty === HARD}>Hard</DifficultyName></Button>
+    </Items>
   </nav>
 );
 
