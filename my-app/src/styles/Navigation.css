@@ -17,6 +17,11 @@
     text-decoration: none;
 }
 
+.Nav > li > p:hover {
+    background-color: red;
+    cursor: pointer;
+}
+
 .Nav > li + li {
     margin-left: 1.5em;
 }
