@@ -11,7 +11,8 @@
     "redux": "^4.0.1",
     "styled-components": "^4.2.0",
     "superagent": "^5.0.5",
-    "typescript": "^3.4.5"
+    "typescript": "^3.4.5",
+    "uuid": "^3.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
