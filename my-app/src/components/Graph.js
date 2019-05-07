@@ -45,6 +45,7 @@ class Graph extends React.Component {
                      onStop={onStop()}
                      defaultPosition={{x: verticesById[vertex].x,
                                        y: verticesById[vertex].y}}
+                     bounds={{left: 5, top: 5, right: 95, bottom: 95}}
                      key={vertex}
                      scale={scale}>
             <circle r={radius}
