@@ -40,7 +40,7 @@ export const target = (state = {}, action) => {
   }
 }
 
-const edges = (state = [], action) => {
+export const edges = (state = [], action) => {
   switch (action.type) {
   case SET_GRAPH:
     return action.edges
@@ -49,7 +49,7 @@ const edges = (state = [], action) => {
   }
 }
 
-const scale = (state = 1, action) => {
+export const scale = (state = 1, action) => {
   switch (action.type) {
   case SET_SCALE:
     return action.scale
@@ -58,7 +58,7 @@ const scale = (state = 1, action) => {
   }
 }
 
-const difficulty = (state = EASY, action) => {
+export const difficulty = (state = EASY, action) => {
   switch (action.type) {
   case SET_GRAPH:
     return action.difficulty
