@@ -3,7 +3,7 @@ import { combineReducers } from 'redux'
 import { EASY, SET_GRAPH, SET_POSITION, SET_SCALE } from './actions'
 
 
-const vertices = (state = [], action) => {
+export const vertices = (state = [], action) => {
   switch (action.type) {
   case SET_GRAPH:
     return action.vertices
@@ -12,7 +12,7 @@ const vertices = (state = [], action) => {
   }
 }
 
-const source = (state = {}, action) => {
+export const source = (state = {}, action) => {
   switch (action.type) {
   case SET_GRAPH:
     return action.source
@@ -31,7 +31,7 @@ const source = (state = {}, action) => {
   }
 }
 
-const target = (state = {}, action) => {
+export const target = (state = {}, action) => {
   switch (action.type) {
   case SET_GRAPH:
     return action.target
@@ -40,7 +40,7 @@ const target = (state = {}, action) => {
   }
 }
 
-const edges = (state = [], action) => {
+export const edges = (state = [], action) => {
   switch (action.type) {
   case SET_GRAPH:
     return action.edges
@@ -49,7 +49,7 @@ const edges = (state = [], action) => {
   }
 }
 
-const scale = (state = 1, action) => {
+export const scale = (state = 1, action) => {
   switch (action.type) {
   case SET_SCALE:
     return action.scale
@@ -58,7 +58,7 @@ const scale = (state = 1, action) => {
   }
 }
 
-const difficulty = (state = EASY, action) => {
+export const difficulty = (state = EASY, action) => {
   switch (action.type) {
   case SET_GRAPH:
     return action.difficulty
