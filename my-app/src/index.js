@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
 import './index.css';
-import App from './components/App';
+import AppContainer from './containers/AppContainer';
 import graphIsomorphism from './reducers';
 import {fetchEasyGraph} from './services';
 
@@ -14,7 +14,7 @@ fetchEasyGraph(store.dispatch)();
 
 render(
   <Provider store={store}>
-    <App />
+    <AppContainer />
   </Provider>,
   document.getElementById('root')
 );

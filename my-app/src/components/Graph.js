@@ -42,7 +42,7 @@ class Graph extends React.Component {
         })}
         {vertices.map(vertex => (
           <Draggable onDrag={onDrag(vertex)}
-                     onStop={onStop()}
+                     onStop={onStop(vertices, verticesById)}
                      defaultPosition={{x: verticesById[vertex].x,
                                        y: verticesById[vertex].y}}
                      bounds={{left: 5, top: 5, right: 95, bottom: 95}}

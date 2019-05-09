@@ -5,7 +5,7 @@ import SourceGraph from '../containers/SourceGraph';
 import TargetGraph from '../containers/TargetGraph';
 import DifficultyPanel from '../containers/DifficultyPanel';
 
-const App = () => (
+const App = ({done}) => (
   <div className="App">
     <DifficultyPanel />
     <div className="Graph-Body">

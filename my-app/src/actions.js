@@ -37,8 +37,10 @@ export const setGraph = (vertices, source, target, edges, difficulty) => (
   }
 )
 
-export const updateDistance = () => (
+export const updateDistance = (vertices, source) => (
   {
-    type: UPDATE_DISTANCE
+    type: UPDATE_DISTANCE,
+    vertices,
+    source,
   }
 )
