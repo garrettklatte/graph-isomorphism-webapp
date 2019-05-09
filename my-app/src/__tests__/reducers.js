@@ -1,5 +1,21 @@
-import {difficulty, edges, scale, source, target, vertices} from '../reducers'
-import {EASY, MEDIUM, SET_GRAPH, SET_POSITION, SET_SCALE} from '../actions'
+import {
+  difficulty,
+  distanceSource,
+  distanceTarget,
+  edges,
+  scale,
+  source,
+  target,
+  vertices
+} from '../reducers'
+import {
+  EASY,
+  MEDIUM,
+  SET_GRAPH,
+  SET_POSITION,
+  SET_SCALE,
+  UPDATE_DISTANCE
+} from '../actions'
 
 const graph = {
   vertices: ['A', 'B', 'C', 'D'],
@@ -254,5 +270,174 @@ describe('difficulty reducer', () => {
 
     // Then
     expect(newState).toBe(MEDIUM)
+  })
+})
+
+describe('distanceSource reducer', () => {
+  it('handles undefined action', () => {
+    // Given
+    const state = undefined
+    const action = {}
+
+    // When
+    const newState = distanceSource(state, action)
+
+    // Then
+    expect(newState).toStrictEqual({})
+  })
+
+  it('handles SET_GRAPH action', () => {
+    // Given
+    const state = {}
+    const action = {
+      vertices: ["A", "B", "C"],
+      source: {
+	A: {
+	  x: 10,
+	  y: 10
+	},
+	B: {
+	  x: 40,
+	  y: 10
+	},
+	C: {
+	  x: 40,
+	  y: 50
+	}
+      },
+      type: SET_GRAPH
+    }
+
+    // When
+    const newState = distanceSource(state, action)
+
+    // Then
+    expect(newState).toStrictEqual(
+      {
+	A: {
+	  A: 0,
+	  B: 30,
+	  C: 50
+	},
+	B: {
+	  A: 30,
+	  B: 0,
+	  C: 40
+	},
+	C: {
+	  A: 50,
+	  B: 40,
+	  C: 0
+	}
+      }
+    )
+  })
+
+  it('handles UPDATE_DISTANCE action', () => {
+    // Given
+    const state = {}
+    const action = {
+      vertices: ["A", "B", "C"],
+      source: {
+	A: {
+	  x: 10,
+	  y: 10
+	},
+	B: {
+	  x: 20,
+	  y: 10
+	},
+	C: {
+	  x: 20,
+	  y: 20
+	}
+      },
+      type: UPDATE_DISTANCE
+    }
+
+    // When
+    const newState = distanceSource(state, action)
+
+    // Then
+    expect(newState).toStrictEqual(
+      {
+	A: {
+	  A: 0,
+	  B: 10,
+	  C: 14.142135623730951,
+	},
+	B: {
+	  A: 10,
+	  B: 0,
+	  C: 10
+	},
+	C: {
+	  A: 14.142135623730951,
+	  B: 10,
+	  C: 0
+	}
+      }
+    )
+  })
+})
+
+describe('distanceTarget reducer', () => {
+  it('handles undefined action', () => {
+    // Given
+    const state = undefined
+    const action = {}
+
+    // When
+    const newState = distanceTarget(state, action)
+
+    // Then
+    expect(newState).toStrictEqual({})
+  })
+
+  it('handles SET_GRAPH action', () => {
+    // Given
+    const state = {}
+    const action = {
+      vertices: ["A", "B", "C"],
+      target: {
+	A: {
+	  x: 10,
+	  y: 10
+	},
+	B: {
+	  x: 20,
+	  y: 10
+	},
+	C: {
+	  x: 20,
+	  y: 20
+	}
+      },
+      type: SET_GRAPH
+    }
+
+    // When
+    const newState = distanceTarget(state, action)
+
+    // Then
+    expect(newState).toStrictEqual(
+      {
+	A: {
+	  A: 0,
+	  B: 10,
+	  C: 14.142135623730951,
+	},
+	B: {
+	  A: 10,
+	  B: 0,
+	  C: 10
+	},
+	C: {
+	  A: 14.142135623730951,
+	  B: 10,
+	  C: 0
+	}
+      }
+    )
   })
 })

@@ -2,6 +2,7 @@
 export const SET_POSITION = 'SET_POSITION'
 export const SET_SCALE = 'SET_SCALE'
 export const SET_GRAPH = 'SET_GRAPH'
+export const UPDATE_DISTANCE = 'UPDATE_DISTANCE'
 
 // difficulties
 export const EASY = 'EASY'
@@ -33,5 +34,11 @@ export const setGraph = (vertices, source, target, edges, difficulty) => (
     target,
     edges,
     difficulty
+  }
+)
+
+export const updateDistance = () => (
+  {
+    type: UPDATE_DISTANCE
   }
 )
