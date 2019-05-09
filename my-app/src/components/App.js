@@ -14,6 +14,7 @@ const App = ({done}) => (
       <h2 className="Title">Target</h2>
       <h2 className="Title">Source</h2>
     </div>
+    {done ? <h1>Done</h1> : <h1>Not done</h1>}
   </div>
 );
 
