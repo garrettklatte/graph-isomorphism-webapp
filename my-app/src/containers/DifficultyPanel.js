@@ -5,9 +5,10 @@ import Navigation from '../components/Navigation'
 import {fetchGraph} from '../services'
 
 const mapStateToProps = state => {
-  const {difficulty} = state
+  const {difficulty, uri} = state
   return {
-    difficulty
+    difficulty,
+    uri
   }
 }
 

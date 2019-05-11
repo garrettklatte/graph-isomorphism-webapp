@@ -1,4 +1,4 @@
-import {difficulty, edges, scale, source, target, vertices} from '../reducers'
+import {uri, difficulty, edges, scale, source, target, vertices} from '../reducers'
 import {EASY, MEDIUM, SET_GRAPH, SET_POSITION, SET_SCALE} from '../actions'
 
 const graph = {
@@ -254,5 +254,34 @@ describe('difficulty reducer', () => {
 
     // Then
     expect(newState).toBe(MEDIUM)
+  })
+})
+
+describe('uri reducer', () => {
+  it('handles undefined action', () => {
+    // Given
+    const state = undefined
+    const action = {}
+
+    // When
+    const newState = uri(state, action)
+
+    // Then
+    expect(newState).toBe(0)
+  })
+
+  it('handles SET_GRAPH action', () => {
+    // Given
+    const state = 3
+    const action = {
+      type: SET_GRAPH,
+      uri: 6
+    }
+
+    // When
+    const newState = uri(state, action)
+
+    // Then
+    expect(newState).toBe(6)
   })
 })
