@@ -1,2 +1,8 @@
 # emacs
 *~
+
+# npm
+node_modules/
+
+# artifacts
+build/
