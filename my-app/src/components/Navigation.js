@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {EASY, MEDIUM, HARD} from '../actions';
+import { EASY, MEDIUM, HARD } from '../actions';
 
 const Items = styled.ul`
     display: flex;
@@ -12,7 +12,7 @@ const Items = styled.ul`
 const Name = styled.p`
     display: block;
     padding: 0.5em 1em;
-    background-color: ${props => props.chosen ? "LightBlue": "Orange"};
+    background-color: ${props => (props.chosen ? 'LightBlue' : 'Orange')};
     color: white;
     border-radius: 2px;
     text-decoration: none;
@@ -41,7 +41,9 @@ const Button = styled(ListItem)`
     margin-left: 1.5em;
 `;
 
-const Navigation = ({difficulty, uri, onEasy, onMedium, onHard}) => (
+const Navigation = ({
+  difficulty, uri, onEasy, onMedium, onHard,
+}) => (
   <nav>
     <Items>
       <Title><Name>Graph Isomorphism</Name></Title>
