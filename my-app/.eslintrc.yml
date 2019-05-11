@@ -1,10 +1,13 @@
 env:
   browser: true
   es6: true
+  jest/globals: true
 extends: airbnb
 globals:
   Atomics: readonly
   SharedArrayBuffer: readonly
+parser:
+  babel-eslint
 parserOptions:
   ecmaFeatures:
     jsx: true
@@ -12,4 +15,5 @@ parserOptions:
   sourceType: module
 plugins:
   - react
+  - jest
 rules: {}

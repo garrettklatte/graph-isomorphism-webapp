@@ -51,12 +51,12 @@ describe('translate', () => {
     expect(newPosition).toStrictEqual(
       {
         M: {
-	  x: 10,
-	  y: 25,
+          x: 10,
+          y: 25,
         },
         N: {
-	  x: 50,
-	  y: 60,
+          x: 50,
+          y: 60,
         },
       },
     );
