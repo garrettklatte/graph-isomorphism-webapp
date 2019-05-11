@@ -4,13 +4,14 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
 import './index.css';
+import {EASY} from './actions';
 import App from './components/App';
 import graphIsomorphism from './reducers';
-import {fetchEasyGraph} from './services';
+import {fetchGraph} from './services';
 
 const store = createStore(graphIsomorphism);
 
-fetchEasyGraph(store.dispatch)();
+fetchGraph(store.dispatch, EASY)();
 
 render(
   <Provider store={store}>

@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 
+import {EASY, MEDIUM, HARD} from '../actions'
 import Navigation from '../components/Navigation'
-import {fetchEasyGraph, fetchMediumGraph, fetchHardGraph} from '../services'
+import {fetchGraph} from '../services'
 
 const mapStateToProps = state => {
   const {difficulty} = state
@@ -12,9 +13,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onEasy: fetchEasyGraph(dispatch),
-    onMedium: fetchMediumGraph(dispatch),
-    onHard: fetchHardGraph(dispatch),
+    onEasy: fetchGraph(dispatch, EASY),
+    onMedium: fetchGraph(dispatch, MEDIUM),
+    onHard: fetchGraph(dispatch, HARD),
   }
 }
 
