@@ -1,41 +1,26 @@
 import request from 'superagent';
 
-import {EASY, MEDIUM, HARD, setGraph} from './actions';
+import {setGraph} from './actions';
 import {translate} from './utils/translate'
 
-const BASE = "https://rdj1cwv0s5.execute-api.us-east-1.amazonaws.com/dev/graphs"
+const BASE = "https://rdj1cwv0s5.execute-api.us-east-1.amazonaws.com/dev/graphs/"
 
-export const fetchEasyGraph = dispatch => () => {
+export const fetchGraph = (dispatch, difficulty) => () => {
   request
-    .get(BASE + '/easy/' + '2')
+    .get(BASE + difficulty.toLowerCase())
     .then(res => {
-      const {vertices, source, target, edges} = translate(res.body)
-      dispatch(setGraph(vertices, source, target, edges, EASY))
-    })
-    .catch(err => {
-      console.log("error:", err)
-    });
-}
+      const uris = res.body
+      const uri = uris[Math.floor(Math.random() * uris.length)]
 
-export const fetchMediumGraph = dispatch => () => {
-  request
-    .get(BASE + '/medium/' + '1')
-    .then(res => {
-      const {vertices, source, target, edges} = translate(res.body)
-      dispatch(setGraph(vertices, source, target, edges, MEDIUM))
-    })
-    .catch(err => {
-      console.log("error:", err)
-    });
-}
-
-export const fetchHardGraph = dispatch => () => {
-  request
-    .get(BASE + '/hard/' + '1')
-    .then(res => {
-      const {vertices, source, target, edges} = translate(res.body)
-      console.log(res.body)
-      dispatch(setGraph(vertices, source, target, edges, HARD))
+      request
+	.get(BASE + difficulty.toLowerCase() + '/' + uri)
+	.then(res => {
+	  const {vertices, source, target, edges} = translate(res.body)
+	  dispatch(setGraph(vertices, source, target, edges, difficulty))
+	})
+	.catch(err => {
+	  console.log("error:", err)
+	});
     })
     .catch(err => {
       console.log("error:", err)
