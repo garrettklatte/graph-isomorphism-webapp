@@ -5,7 +5,7 @@ import { translate } from './utils/translate';
 
 const BASE = 'https://rdj1cwv0s5.execute-api.us-east-1.amazonaws.com/dev/graphs/';
 
-export const fetchGraph = (dispatch, difficulty) => currentUri => () => {
+const fetchGraph = (dispatch, difficulty) => currentUri => () => {
   request
     .get(BASE + difficulty.toLowerCase())
     .then((outerRes) => {
@@ -33,3 +33,5 @@ export const fetchGraph = (dispatch, difficulty) => currentUri => () => {
       console.log('error:', err);
     });
 };
+
+export default fetchGraph;

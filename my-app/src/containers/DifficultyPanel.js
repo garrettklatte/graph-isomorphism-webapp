@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import { EASY, MEDIUM, HARD } from '../actions';
 import Navigation from '../components/Navigation';
-import { fetchGraph } from '../services';
+import fetchGraph from '../services';
 
 const mapStateToProps = (state) => {
   const { difficulty, uri } = state;

@@ -7,7 +7,7 @@ import './index.css';
 import { EASY } from './actions';
 import App from './components/App';
 import graphIsomorphism from './reducers';
-import { fetchGraph } from './services';
+import fetchGraph from './services';
 
 const store = createStore(graphIsomorphism);
 
