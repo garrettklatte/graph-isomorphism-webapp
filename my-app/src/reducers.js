@@ -67,13 +67,23 @@ export const difficulty = (state = EASY, action) => {
   }
 }
 
+export const uri = (state = 0, action) => {
+  switch (action.type) {
+  case SET_GRAPH:
+    return action.uri
+  default:
+    return state
+  }
+}
+
 const graphIsomorphism = combineReducers({
   vertices,
   source,
   target,
   edges,
   scale,
-  difficulty
+  difficulty,
+  uri
 })
 
 export default graphIsomorphism

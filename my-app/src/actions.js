@@ -25,13 +25,14 @@ export const setScale = scale => (
   }
 )
 
-export const setGraph = (vertices, source, target, edges, difficulty) => (
+export const setGraph = (vertices, source, target, edges, difficulty, uri) => (
   {
     type: SET_GRAPH,
     vertices,
     source,
     target,
     edges,
-    difficulty
+    difficulty,
+    uri
   }
 )

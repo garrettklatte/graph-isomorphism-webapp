@@ -11,7 +11,7 @@ import {fetchGraph} from './services';
 
 const store = createStore(graphIsomorphism);
 
-fetchGraph(store.dispatch, EASY)();
+fetchGraph(store.dispatch, EASY)(0)();
 
 render(
   <Provider store={store}>

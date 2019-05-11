@@ -41,13 +41,13 @@ const Button = styled(ListItem)`
     margin-left: 1.5em;
 `;
 
-const Navigation = ({difficulty, onEasy, onMedium, onHard}) => (
+const Navigation = ({difficulty, uri, onEasy, onMedium, onHard}) => (
   <nav>
     <Items>
       <Title><Name>Graph Isomorphism</Name></Title>
-      <Button onClick={onEasy}><DifficultyName chosen={difficulty === EASY}>Easy</DifficultyName></Button>
-      <Button onClick={onMedium}><DifficultyName chosen={difficulty === MEDIUM}>Medium</DifficultyName></Button>
-      <Button onClick={onHard}><DifficultyName chosen={difficulty === HARD}>Hard</DifficultyName></Button>
+      <Button onClick={onEasy(uri)}><DifficultyName chosen={difficulty === EASY}>Easy</DifficultyName></Button>
+      <Button onClick={onMedium(uri)}><DifficultyName chosen={difficulty === MEDIUM}>Medium</DifficultyName></Button>
+      <Button onClick={onHard(uri)}><DifficultyName chosen={difficulty === HARD}>Hard</DifficultyName></Button>
     </Items>
   </nav>
 );
