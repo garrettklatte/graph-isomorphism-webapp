@@ -24,13 +24,7 @@ const fetchGraph = (dispatch, difficulty) => currentUri => () => {
             vertices, source, target, edges,
           } = translate(innerRes.body);
           dispatch(setGraph(vertices, source, target, edges, difficulty, uri));
-        })
-        .catch((err) => {
-          console.log('error:', err);
         });
-    })
-    .catch((err) => {
-      console.log('error:', err);
     });
 };
 
