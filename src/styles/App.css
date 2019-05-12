@@ -1,6 +1,7 @@
 .App {
     max-width: 720px;
     margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .Graph-Body {
@@ -11,13 +12,13 @@
 }
 
 .Graph-Body > svg {
-    background-color: pink;
+    background-color: #9db5b2;
     border-radius: 5px;
 }
 
 .Title {
     color: white;
-    background-color: orange;
+    background-color: none;
     padding: 10px 20px;
     margin: 0 auto;
     border-radius: 5px;

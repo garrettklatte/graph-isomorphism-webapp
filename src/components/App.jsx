@@ -11,8 +11,8 @@ const App = () => (
     <div className="Graph-Body">
       <TargetGraph />
       <SourceGraph />
-      <h2 className="Title">Target</h2>
-      <h2 className="Title">Source</h2>
+      <h3 className="Title">Target</h3>
+      <h3 className="Title">Source</h3>
     </div>
   </div>
 );

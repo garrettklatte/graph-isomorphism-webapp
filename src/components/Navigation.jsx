@@ -12,7 +12,7 @@ const Items = styled.ul`
 const Name = styled.p`
     display: block;
     padding: 0.5em 1em;
-    background-color: ${props => (props.chosen ? 'LightBlue' : 'Orange')};
+    background-color: ${props => (props.chosen ? '#c78283' : '#9db5b2')};
     color: white;
     border-radius: 2px;
     text-decoration: none;
@@ -24,7 +24,7 @@ const Name = styled.p`
 
 const DifficultyName = styled(Name)`
     :hover {
-      background-color: red;
+      background-color: #a36b6c;
       cursor: pointer;
     }
 `;
