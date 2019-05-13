@@ -7,7 +7,7 @@
 .Graph-Body {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: repeat(2, auto);
     grid-gap: 1em;
 }
 
