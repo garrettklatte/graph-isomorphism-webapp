@@ -14,6 +14,7 @@
 .Graph-Body > svg {
     background-color: #9db5b2;
     border-radius: 5px;
+    width: 100%;
 }
 
 .Title {
