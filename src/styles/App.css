@@ -7,13 +7,14 @@
 .Graph-Body {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: repeat(2, auto);
     grid-gap: 1em;
 }
 
 .Graph-Body > svg {
     background-color: #9db5b2;
     border-radius: 5px;
+    width: 100%;
 }
 
 .Title {
