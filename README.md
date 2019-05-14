@@ -8,7 +8,7 @@ Web application that challenges users to show that two graphs are isomorphic. De
 
 ## Browser Compatibility
 
-The web application has been tested and verified to behave correctly when running in the Chrome, Safari, and Edge browsers. The application does not behave correctly when running in the Firefox, or Internet Explorer browsers.
+The web application has been tested and verified to behave correctly when running in the Chrome, Safari, and Edge browsers. The application does not behave correctly when running in the Firefox or Internet Explorer browsers.
 
 ## Running tests
 
