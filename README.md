@@ -4,7 +4,7 @@
 
 ## www.morphissimo.com
 
-Web application that challenges users to show that two graphs are isomorphic. Deployed on AWS. Check out the [RESTful API backend](https://github.com/garrettklatte/graph-isomorphism). Note that automatic validation of a successful end state has been yet been implemented.
+Web application that challenges users to show that two graphs are isomorphic. Deployed on AWS. Check out the [RESTful API backend](https://github.com/garrettklatte/graph-isomorphism). Note that automatic validation of a successful end state has not yet been implemented.
 
 ## Browser Compatibility
 
